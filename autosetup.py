@@ -2,6 +2,8 @@ import os
 import zipfile
 import wget
 import requests
+from urllib.parse import urlparse, urljoin
+from bs4 import BeautifulSoup
 os.system('cls' if os.name == 'nt' else 'clear')
 #executor
 print("Auto setup ug")
@@ -30,18 +32,33 @@ while True:
             print("Chose 1-10")
     except:
         print("Wrong value")
-#download
-def download(url,local_filename):
-    response = requests.get(url, stream=True)
-    if response.status_code == 200:
-        with open(local_filename, 'wb') as file:
-            for chunk in response.iter_content(chunk_size=8192):
-                if chunk:
-                    file.write(chunk)
+#media fire dumbass
+internal_urls = set()
+external_urls = set()
+def is_valid(url):
+    parsed = urlparse(url)
+    return bool(parsed.netloc) and bool(parsed.scheme)
+def gawl(url):
+    domain_name = urlparse(url).netloc
+    soup = BeautifulSoup(requests.get(url).content, "html.parser")
+    for a_tag in soup.find_all("a"):
+        href = a_tag.attrs.get("href", "")
+        href = urljoin(url, href)
+        if is_valid(href):
+            if domain_name in href:
+                internal_urls.add(href)
+            else:
+                external_urls.add(href)      
+    for i in external_urls:
+        if i[0:16] == "https://download":
+            return i
+#unzip
+def unzip(a,b,c):
 
-        return True
-    else:
-        return False
+    with zipfile.ZipFile(a, 'r') as zip_ref:
+        zip_ref.extract(b,c)
+
+
 #zip file test
 def testzip(file):
     try:
@@ -52,12 +69,19 @@ def testzip(file):
         return False
 #func
 if mode == 1 :
-    while True:
-        os.system("wget https://www.mediafire.com/file/88smx13m9ot4nts/App.zip/file")
-        os.system("wget https://download1503.mediafire.com/7zujfv499jlgEuH6lplmYaixdFhL_Y2f-AxO8bk6-vq1Cr6JvTRg-hLhBaqCE3BDtO2yOzQ9boPjPSdJPFIGMKju5oZJZX7I_Cda-qM58MBeCEAOAyHAbCEK7gQ55xh-59yq6zaHwKbOD4wrKjZEtyhMWimXRzyVNnlw6PxmA96z/88smx13m9ot4nts/App.zip")
-        if testzip("/sdcard/Download/App.zip") == False:
-            os.remove("/sdcard/Download/App.zip")
-        else:
-            break
+    print()
+    print("ready to check file")
+    link=gawl("https://www.mediafire.com/file/88smx13m9ot4nts/App.zip/file")
+    print("Dowload some app....")
+    wget.download(link,out="App.zip")
+    print("Download roblox....")
+    wget.download(gawl("https://www.mediafire.com/file/lfxn5c2i8bupfnh/deltasvip.zip/file"),out="deltasvip.zip")
+    roblox=["delta1","delta2","delta3","delta4","delta5","delta6","delta7","delta8","delta9","delta8","delta9","delta10"]
+    for i in range(tab):
+        unzip("/sdcard/Download/deltasvip.zip",roblox[i],"/sdcard/Download/")
+    os.system("su")
+    for i in range(tab):
+        a=roblox[i]
+        os.system(f"pm install {a}")
 else:
     pass
