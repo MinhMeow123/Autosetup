@@ -103,4 +103,5 @@ if mode == 1 :
         print(f"install /sdcard/Download/{a}.apk")
         os.system(f"pm install /sdcard/Download/{a}.apk/")
 else:
+    print("In dev")
     pass
