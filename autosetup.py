@@ -57,6 +57,10 @@ def unzip(a,b,c):
 
     with zipfile.ZipFile(a, 'r') as zip_ref:
         zip_ref.extract(b,c)
+#unzip all
+def unzipall(a,b):
+    with ZipFile(a, "r") as zObject:
+        zObject.extractall(path=b)
 
 
 #zip file test
@@ -69,19 +73,34 @@ def testzip(file):
         return False
 #func
 if mode == 1 :
+    os.system("su")
     print()
     print("ready to check file")
     link=gawl("https://www.mediafire.com/file/88smx13m9ot4nts/App.zip/file")
     print("Dowload some app....")
     wget.download(link,out="App.zip")
-    print("Download roblox....")
+    print("Unzip....")
+    unzipall("/sdcard/Download/App.zip","/sdcard/Download/")
+    print("install apk....")
+    for i in range(1,6):
+        print("Install...")
+        os.system(f"pm install /sdcard/Download/{i}.apk/")
+    
+    
+#----roblox
+
+    print("Download roblox....")   
     wget.download(gawl("https://www.mediafire.com/file/lfxn5c2i8bupfnh/deltasvip.zip/file"),out="deltasvip.zip")
     roblox=["delta1","delta2","delta3","delta4","delta5","delta6","delta7","delta8","delta9","delta8","delta9","delta10"]
-    for i in range(tab):
-        unzip("/sdcard/Download/deltasvip.zip",roblox[i],"/sdcard/Download/")
-    os.system("su")
+    print("Start unzip")
     for i in range(tab):
         a=roblox[i]
-        os.system(f"pm install {a}")
+        print(f"Unzip {a}")
+        unzip("/sdcard/Download/deltasvip.zip",roblox[i],"/sdcard/Download/")
+    print("Start install apk")
+    for i in range(tab):
+        a=roblox[i]
+        print(f"install /sdcard/Download/{a}.apk")
+        os.system(f"pm install /sdcard/Download/{a}.apk/")
 else:
     pass
