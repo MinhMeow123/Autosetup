@@ -1,4 +1,5 @@
 import os
+os.system('echo "y" | termux-setup-storage && pkg install python tsu libexpat openssl -y && pip install Flask requests colorama bs4 wget')
 import os.path
 import zipfile
 import wget
@@ -6,6 +7,7 @@ import requests
 from urllib.parse import urlparse, urljoin
 from bs4 import BeautifulSoup
 import colorama
+import time
 os.system('cls' if os.name == 'nt' else 'clear')
 #executor
 print("Auto setup ug")
@@ -77,20 +79,22 @@ def testzip(file):
         return False
 #func
 if mode == 1 :
-    
+    print("Delete google play")
+    os.system('su -c "pm uninstall -k --user 0 com.android.vending"')
     print()
     print("ready to check file")
-    
+    print()
     link=gawl("https://www.mediafire.com/file/88smx13m9ot4nts/App.zip/file")
     if not(cfe("/sdcard/Download/App.zip")):
         print("Dowload material...")    
         wget.download(link,out="App.zip")  
     else:
         print("Found file,ready to unzip...")
-        
+    print()        
     print("Unzip File....")
     unzipall("/sdcard/Download/App.zip","/sdcard/Download/")
-    
+    print("Wait 5s")
+    sleep(5)
     
     
     
@@ -112,8 +116,14 @@ if mode == 1 :
     for i in range(1,7):
         print("Install...")
         os.system(f'su -c "pm install /sdcard/Download/{i}.apk/"')
+        
+    os.system('su -c "pm uninstall -k --user 0 com.android.vending"')
+    
     for i in range(1,tab+1):
         print(f"install delta{i}.apk")
         os.system(f'su -c "pm install /sdcard/Download/delta{i}.apk"')
+    os.system('su -c "pm install /sdcard/Download/2.apk"')
+#vinh tool
+    os.system('su -c "cd /sdcard/download && export PATH=\$PATH:/data/data/com.termux/files/usr/bin && export TERM=xterm-256color && python ./tool.py"')
 else:
     pass
