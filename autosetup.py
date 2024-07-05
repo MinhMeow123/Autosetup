@@ -1,5 +1,5 @@
 import os
-
+import os.path
 import zipfile
 import wget
 import requests
@@ -63,7 +63,9 @@ def unzip(a,b,c):
 def unzipall(a,b):
     with zipfile.ZipFile(a, "r") as zObject:
         zObject.extractall(path=b)
-
+#Check file exist
+def cfe(file_path):
+    return os.path.exists(file_path)
 
 #zip file test
 def testzip(file):
@@ -79,12 +81,15 @@ if mode == 1 :
     
     print()
     print("ready to check file")
+    
     link=gawl("https://www.mediafire.com/file/88smx13m9ot4nts/App.zip/file")
-    
-    print("Dowload some app....")  
-    wget.download(link,out="App.zip")
-    
-    print("Unzip....")
+    if not(cfe("/sdcard/Download/App.zip")):
+        print("Dowload material...")    
+        wget.download(link,out="App.zip")  
+    else:
+        print("Found file,ready to unzip...")
+        
+    print("Unzip File....")
     unzipall("/sdcard/Download/App.zip","/sdcard/Download/")
     
     print("install apk....")
@@ -94,22 +99,22 @@ if mode == 1 :
     
     
 #----roblox
-
-    print("Download roblox....")   
-    wget.download(gawl("https://www.mediafire.com/file/lfxn5c2i8bupfnh/deltasvip.zip/file"),out="deltasvip.zip")
+    if tab <=5 and not(cfe("/sdcard/Download/deltauvipgvip.zip")):
+        print("Download deltauvipgvip.zip")
+        wget.download(gawl("https://www.mediafire.com/file/dquqq9fg4jndvh6/deltauvipgvip.zip/file"),out="deltauvipgvip.zip")
+    elif tab > 5 and not(cfe("sdcard/Download/deltasvip.zip")):
+        print("Download deltasvip.zip")
+        wget.download(gawl("https://www.mediafire.com/file/lfxn5c2i8bupfnh/deltasvip.zip/file"),out="deltasvip")
+    print("Unzip roblox file...")
+    if cfe("/sdcard/Download/deltauvipgvip.zip"):
+        for i in range(1,tab+1):
+            unzip("/sdcard/Download/deltauvipgvip.zip",f"delta{i}.apk","/sdcard/Download/")
+    elif cfe("/sdcard/Download/deltasvip.zip"):
+        for i in range(1,tab+1):
+            unzip("/sdcard/Download/deltasvip.zip",f"delta{1}.apk","/sdcard/Download/")
     
-    roblox=["delta1","delta2","delta3","delta4","delta5","delta6","delta7","delta8","delta9","delta8","delta9","delta10"]
-    
-    print("Start unzip")
-    for i in range(tab):
-        a=roblox[i]
-        print(f"Unzip {a}")
-        unzip("/sdcard/Download/deltasvip.zip",roblox[i],"/sdcard/Download/")
-    
-    print("Start install apk")
-    for i in range(tab):
-        a=roblox[i]
-        print(f"install /sdcard/Download/{a}.apk")
-        os.system(f"pm install /sdcard/Download/{a}.apk/")
+    for i in range(1,tab+1):
+        print(f"install delta{i}.apk")
+        os.system(f"pm install /sdcard/Download/delta{1}.apk")
 else:
     pass
