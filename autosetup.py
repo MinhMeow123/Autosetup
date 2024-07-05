@@ -109,7 +109,7 @@ if mode == 1 :
         for i in range(1,tab+1):
             unzip("/sdcard/Download/deltasvip.zip",f"delta{1}.apk","/sdcard/Download/")
     print("install apk....")
-    for i in range(1,6):
+    for i in range(1,7):
         print("Install...")
         os.system(f'su -c "pm install /sdcard/Download/{i}.apk/"')
     for i in range(1,tab+1):
