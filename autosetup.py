@@ -94,7 +94,7 @@ if mode == 1 :
     print("Unzip File....")
     unzipall("/sdcard/Download/App.zip","/sdcard/Download/")
     print("Wait 5s")
-    sleep(5)
+    time.sleep(5)
     
     
     
