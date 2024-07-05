@@ -77,7 +77,6 @@ def testzip(file):
         return False
 #func
 if mode == 1 :
-    os.system("su")
     
     print()
     print("ready to check file")
@@ -92,29 +91,29 @@ if mode == 1 :
     print("Unzip File....")
     unzipall("/sdcard/Download/App.zip","/sdcard/Download/")
     
-    print("install apk....")
-    for i in range(1,6):
-        print("Install...")
-        os.system(f"pm install /sdcard/Download/{i}.apk/")
+    
     
     
 #----roblox
-    if tab <=5 and not(cfe("/sdcard/Download/deltauvipgvip.zip")):
+    if tab <=5 and not(cfe("/sdcard/Download/delta.zip")):
         print("Download deltauvipgvip.zip")
-        wget.download(gawl("https://www.mediafire.com/file/dquqq9fg4jndvh6/deltauvipgvip.zip/file"),out="deltauvipgvip.zip")
+        wget.download(gawl("https://www.mediafire.com/file/0sacrbnq0izj8ug/delta.zip/file"),out="delta.zip")
     elif tab > 5 and not(cfe("sdcard/Download/deltasvip.zip")):
         print("Download deltasvip.zip")
         wget.download(gawl("https://www.mediafire.com/file/lfxn5c2i8bupfnh/deltasvip.zip/file"),out="deltasvip")
     print("Unzip roblox file...")
-    if cfe("/sdcard/Download/deltauvipgvip.zip"):
+    if cfe("/sdcard/Download/delta.zip"):
         for i in range(1,tab+1):
-            unzip("/sdcard/Download/deltauvipgvip.zip",f"delta{i}.apk","/sdcard/Download/")
+            unzip("/sdcard/Download/delta.zip",f"delta{i}.apk","/sdcard/Download/")
     elif cfe("/sdcard/Download/deltasvip.zip"):
         for i in range(1,tab+1):
             unzip("/sdcard/Download/deltasvip.zip",f"delta{1}.apk","/sdcard/Download/")
-    
+    print("install apk....")
+    for i in range(1,6):
+        print("Install...")
+        os.system(f'su -c "pm install /sdcard/Download/{i}.apk/"')
     for i in range(1,tab+1):
         print(f"install delta{i}.apk")
-        os.system(f"pm install /sdcard/Download/delta{1}.apk")
+        os.system(f'su -c "pm install /sdcard/Download/delta{i}.apk"')
 else:
     pass
