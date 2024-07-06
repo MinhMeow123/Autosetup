@@ -107,15 +107,21 @@ if mode == 1:
 #----roblox delta
     if tab <=5 and not(cfe("/sdcard/Download/delta.zip")):
         print("Download delta.zip")
+        wget.download("https://www.mediafire.com/file/0sacrbnq0izj8ug/delta.zip/file",out="trash.html")
         delta=gawl("https://www.mediafire.com/file/0sacrbnq0izj8ug/delta.zip/file")
         time.sleep(1)
         delta=gawl("https://www.mediafire.com/file/0sacrbnq0izj8ug/delta.zip/file")
         wget.download(delta,out="delta.zip")
+        os.remove("/sdcard/Download/delta.zip")
+        wget.download(delta,out="delta.zip")
     elif tab > 5 and not(cfe("/sdcard/Download/deltasvip.zip")):
         print("Download delta(large).zip")
+        wget.download("https://www.mediafire.com/file/lfxn5c2i8bupfnh/deltasvip.zip/file",out="trash.html")
         delta2=gawl("https://www.mediafire.com/file/lfxn5c2i8bupfnh/deltasvip.zip/file")
         time.sleep(1)
         delta2=gawl("https://www.mediafire.com/file/lfxn5c2i8bupfnh/deltasvip.zip/file")
+        wget.download(delta2,out="deltasvip.zip")
+        os.remove("/sdcard/Download/deltasvip.zip")
         wget.download(delta2,out="deltasvip.zip")
     print("Unzip Delta file...")
 #----unzip
@@ -129,12 +135,16 @@ if mode == 1:
 else:
     if tab <=5 and not(cfe("/sdcard/Download/fluxus.zip")):
         print("Download fluxus.zip")
+        wget.download("https://www.mediafire.com/file/ftijj6omvmcaztn/fluxus.zip/file",out="trash.html")
         fluxus=gawl("https://www.mediafire.com/file/ftijj6omvmcaztn/fluxus.zip/file")
         time.sleep(1)
         fluxus=gawl("https://www.mediafire.com/file/ftijj6omvmcaztn/fluxus.zip/file")        
         wget.download(fluxus,out="fluxus.zip")
+        os.remove("/sdcard/Download/fluxus.zip")
+        wget.download(fluxus,out="fluxus.zip")
     elif tab > 5 and not(cfe("/sdcard/Download/fluxus2.zip")):
         print("Download fluxus2.zip")
+        wget.download("https://www.mediafire.com/file/fpv1r4hv7b3a548/fluxus2.zip/file",out="trash.html")
         fluxus2=gawl('https://www.mediafire.com/file/fpv1r4hv7b3a548/fluxus2.zip/file')
         time.sleep(1)
         fluxus2=gawl('https://www.mediafire.com/file/fpv1r4hv7b3a548/fluxus2.zip/file')
