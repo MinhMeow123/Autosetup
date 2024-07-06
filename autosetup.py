@@ -107,7 +107,7 @@ if mode == 1:
 #----roblox delta
     if tab <=5 and not(cfe("/sdcard/Download/delta.zip")):
         print("Download delta.zip")
-        wget.download("https://www.mediafire.com/file/0sacrbnq0izj8ug/delta.zip/file",out="trash.html")
+        #wget.download("https://www.mediafire.com/file/0sacrbnq0izj8ug/delta.zip/file",out="trash.html")
         delta=gawl("https://www.mediafire.com/file/0sacrbnq0izj8ug/delta.zip/file")
         time.sleep(1)
         delta=gawl("https://www.mediafire.com/file/0sacrbnq0izj8ug/delta.zip/file")
@@ -116,7 +116,7 @@ if mode == 1:
         wget.download(delta,out="delta.zip")
     elif tab > 5 and not(cfe("/sdcard/Download/deltasvip.zip")):
         print("Download delta(large).zip")
-        wget.download("https://www.mediafire.com/file/lfxn5c2i8bupfnh/deltasvip.zip/file",out="trash.html")
+        #wget.download("https://www.mediafire.com/file/lfxn5c2i8bupfnh/deltasvip.zip/file",out="trash.html")
         delta2=gawl("https://www.mediafire.com/file/lfxn5c2i8bupfnh/deltasvip.zip/file")
         time.sleep(1)
         delta2=gawl("https://www.mediafire.com/file/lfxn5c2i8bupfnh/deltasvip.zip/file")
@@ -135,7 +135,7 @@ if mode == 1:
 else:
     if tab <=5 and not(cfe("/sdcard/Download/fluxus.zip")):
         print("Download fluxus.zip")
-        wget.download("https://www.mediafire.com/file/ftijj6omvmcaztn/fluxus.zip/file",out="trash.html")
+        #wget.download("https://www.mediafire.com/file/ftijj6omvmcaztn/fluxus.zip/file",out="trash.html")
         fluxus=gawl("https://www.mediafire.com/file/ftijj6omvmcaztn/fluxus.zip/file")
         time.sleep(1)
         fluxus=gawl("https://www.mediafire.com/file/ftijj6omvmcaztn/fluxus.zip/file")        
@@ -144,11 +144,12 @@ else:
         wget.download(fluxus,out="fluxus.zip")
     elif tab > 5 and not(cfe("/sdcard/Download/fluxus2.zip")):
         print("Download fluxus2.zip")
-        wget.download("https://www.mediafire.com/file/fpv1r4hv7b3a548/fluxus2.zip/file",out="trash.html")
+        #wget.download("https://www.mediafire.com/file/fpv1r4hv7b3a548/fluxus2.zip/file",out="trash.html")
         fluxus2=gawl('https://www.mediafire.com/file/fpv1r4hv7b3a548/fluxus2.zip/file')
         time.sleep(1)
         fluxus2=gawl('https://www.mediafire.com/file/fpv1r4hv7b3a548/fluxus2.zip/file')
         wget.download(fluxus2,out="fluxus2.zip")
+        
     print("Unzip roblox file...")
 #----unzip
     if cfe("/sdcard/Download/fluxus2.zip"):
