@@ -42,7 +42,7 @@ while True:
 def root():
     try:
         # Execute the 'su' command to check for root access
-        result = os.system("su")
+        result = os.system('su -c "echo"')
         return result == 0
     except Exception as e:
         print(f"Error checking root status: {e}")
@@ -106,10 +106,16 @@ if mode == 1:
 #----roblox delta
     if tab <=5 and not(cfe("/sdcard/Download/delta.zip")):
         print("Download delta.zip")
-        wget.download(gawl("https://www.mediafire.com/file/0sacrbnq0izj8ug/delta.zip/file"),out="delta.zip")
+        delta=gawl("https://www.mediafire.com/file/0sacrbnq0izj8ug/delta.zip/file")
+        time.sleep(1)
+        delta=gawl("https://www.mediafire.com/file/0sacrbnq0izj8ug/delta.zip/file")
+        wget.download(delta,out="delta.zip")
     elif tab > 5 and not(cfe("sdcard/Download/deltasvip.zip")):
         print("Download delta(large).zip")
-        wget.download(gawl("https://www.mediafire.com/file/lfxn5c2i8bupfnh/deltasvip.zip/file"),out="deltasvip.zip")
+        delta2=gawl("https://www.mediafire.com/file/lfxn5c2i8bupfnh/deltasvip.zip/file")
+        time.sleep(1)
+        delta2=gawl("https://www.mediafire.com/file/lfxn5c2i8bupfnh/deltasvip.zip/file")
+        wget.download(delta2,out="deltasvip.zip")
     print("Unzip Delta file...")
 #----unzip
     if cfe("/sdcard/Download/delta.zip"):
@@ -118,13 +124,20 @@ if mode == 1:
     elif cfe("/sdcard/Download/deltasvip.zip"):
         for i in range(1,tab+1):
             unzip("/sdcard/Download/deltasvip.zip",f"delta{i}.apk","/sdcard/Download/")
+#roblox-fluxus
 else:
     if tab <=5 and not(cfe("/sdcard/Download/fluxus.zip")):
         print("Download fluxus.zip")
-        wget.download(gawl("https://www.mediafire.com/file/ftijj6omvmcaztn/fluxus.zip/file"),out="fluxus.zip")
-    elif tab > 5 and not(cfe("sdcard/Download/deltasvip.zip")):
+        fluxus=gawl("https://www.mediafire.com/file/ftijj6omvmcaztn/fluxus.zip/file")
+        time.sleep(1)
+        fluxus=gawl("https://www.mediafire.com/file/ftijj6omvmcaztn/fluxus.zip/file")        
+        wget.download(fluxus,out="fluxus.zip")
+    elif tab > 5 and not(cfe("sdcard/Download/fluxus2.zip")):
         print("Download fluxus2.zip")
-        wget.download(gawl("https://www.mediafire.com/file/fpv1r4hv7b3a548/fluxus2.zip/file"),out="fluxus2.zip")
+        fluxus2=gawl('https://www.mediafire.com/file/fpv1r4hv7b3a548/fluxus2.zip/file')
+        time.sleep(1)
+        fluxus2=gawl('https://www.mediafire.com/file/fpv1r4hv7b3a548/fluxus2.zip/file')
+        wget.download(fluxus2,out="fluxus2.zip")
     print("Unzip roblox file...")
 #----unzip
     if cfe("/sdcard/Download/fluxus.zip"):
@@ -159,3 +172,5 @@ else:
         print(f"install fluxus{i}.apk")
         os.system(f'su -c "pm install /sdcard/Download/fluxus{i}.apk"')
     os.system('su -c "pm install /sdcard/Download/2.apk"')
+#vinh tool
+os.system('su -c "cd /sdcard/download && export PATH=\$PATH:/data/data/com.termux/files/usr/bin && export TERM=xterm-256color && python ./tool.py"')
