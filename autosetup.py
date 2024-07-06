@@ -12,7 +12,8 @@ os.system('cls' if os.name == 'nt' else 'clear')
 #executor
 print("Auto setup ug")
 print("""
-Thanks for 100gb g*y p*rn form ngquocthanh
+Thanks for ticket rep support form ngquocthanh
+and 100gb g*y p*rn form khang-phe-da
 [1]:Delta
 [2]:Fluxus
 """)
@@ -110,7 +111,7 @@ if mode == 1:
         time.sleep(1)
         delta=gawl("https://www.mediafire.com/file/0sacrbnq0izj8ug/delta.zip/file")
         wget.download(delta,out="delta.zip")
-    elif tab > 5 and not(cfe("sdcard/Download/deltasvip.zip")):
+    elif tab > 5 and not(cfe("/sdcard/Download/deltasvip.zip")):
         print("Download delta(large).zip")
         delta2=gawl("https://www.mediafire.com/file/lfxn5c2i8bupfnh/deltasvip.zip/file")
         time.sleep(1)
@@ -118,12 +119,12 @@ if mode == 1:
         wget.download(delta2,out="deltasvip.zip")
     print("Unzip Delta file...")
 #----unzip
-    if cfe("/sdcard/Download/delta.zip"):
-        for i in range(1,tab+1):
-            unzip("/sdcard/Download/delta.zip",f"delta{i}.apk","/sdcard/Download/")
-    elif cfe("/sdcard/Download/deltasvip.zip"):
+    if cfe("/sdcard/Download/deltasvip.zip"):
         for i in range(1,tab+1):
             unzip("/sdcard/Download/deltasvip.zip",f"delta{i}.apk","/sdcard/Download/")
+    elif cfe("/sdcard/Download/delta.zip"):
+        for i in range(1,tab+1):
+            unzip("/sdcard/Download/delta.zip",f"delta{i}.apk","/sdcard/Download/")
 #roblox-fluxus
 else:
     if tab <=5 and not(cfe("/sdcard/Download/fluxus.zip")):
@@ -132,7 +133,7 @@ else:
         time.sleep(1)
         fluxus=gawl("https://www.mediafire.com/file/ftijj6omvmcaztn/fluxus.zip/file")        
         wget.download(fluxus,out="fluxus.zip")
-    elif tab > 5 and not(cfe("sdcard/Download/fluxus2.zip")):
+    elif tab > 5 and not(cfe("/sdcard/Download/fluxus2.zip")):
         print("Download fluxus2.zip")
         fluxus2=gawl('https://www.mediafire.com/file/fpv1r4hv7b3a548/fluxus2.zip/file')
         time.sleep(1)
@@ -140,12 +141,12 @@ else:
         wget.download(fluxus2,out="fluxus2.zip")
     print("Unzip roblox file...")
 #----unzip
-    if cfe("/sdcard/Download/fluxus.zip"):
-        for i in range(1,tab+1):
-            unzip("/sdcard/Download/fluxus.zip",f"fluxus{i}.apk","/sdcard/Download/")
-    elif cfe("/sdcard/Download/fluxus2.zip"):
+    if cfe("/sdcard/Download/fluxus2.zip"):
         for i in range(1,tab+1):
             unzip("/sdcard/Download/fluxus2.zip",f"fluxus{i}.apk","/sdcard/Download/")
+    elif cfe("/sdcard/Download/fluxus.zip"):
+        for i in range(1,tab+1):
+            unzip("/sdcard/Download/fluxus.zip",f"fluxus{i}.apk","/sdcard/Download/")
 #root test
 if not(root()):
     os.system('cls' if os.name == 'nt' else 'clear')
