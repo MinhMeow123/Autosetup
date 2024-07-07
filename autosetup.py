@@ -125,6 +125,7 @@ if mode == 1:
         wget.download(delta2,out="deltasvip.zip")
     print("Unzip Delta file...")
 #----unzip
+    time.sleep(1)
     if cfe("/sdcard/Download/deltasvip.zip"):
         for i in range(1,tab+1):
             unzip("/sdcard/Download/deltasvip.zip",f"delta{i}.apk","/sdcard/Download/")
@@ -135,20 +136,10 @@ if mode == 1:
 else:
     if tab <=5 and not(cfe("/sdcard/Download/fluxus.zip")):
         print("Download fluxus.zip")
-        #wget.download("https://www.mediafire.com/file/ftijj6omvmcaztn/fluxus.zip/file",out="trash.html")
-        fluxus=gawl("https://www.mediafire.com/file/ftijj6omvmcaztn/fluxus.zip/file")
-        time.sleep(1)
-        fluxus=gawl("https://www.mediafire.com/file/ftijj6omvmcaztn/fluxus.zip/file")        
-        wget.download(fluxus,out="fluxus.zip")
-        os.remove("/sdcard/Download/fluxus.zip")
-        wget.download(fluxus,out="fluxus.zip")
+        wget.download("https://github.com/MinhMeow123/Autosetup/releases/download/database/fluxus.zip",out="fluxus.zip")
     elif tab > 5 and not(cfe("/sdcard/Download/fluxus2.zip")):
         print("Download fluxus2.zip")
-        #wget.download("https://www.mediafire.com/file/fpv1r4hv7b3a548/fluxus2.zip/file",out="trash.html")
-        fluxus2=gawl('https://www.mediafire.com/file/fpv1r4hv7b3a548/fluxus2.zip/file')
-        time.sleep(1)
-        fluxus2=gawl('https://www.mediafire.com/file/fpv1r4hv7b3a548/fluxus2.zip/file')
-        wget.download(fluxus2,out="fluxus2.zip")
+        wget.download("https://github.com/MinhMeow123/Autosetup/releases/download/database/fluxus2.zip",out="fluxus2.zip")
         
     print("Unzip roblox file...")
 #----unzip
