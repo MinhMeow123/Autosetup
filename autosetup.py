@@ -13,7 +13,7 @@ os.system('cls' if os.name == 'nt' else 'clear')
 print("Auto setup ug")
 print("""
 Thanks for ticket rep support form ngquocthanh
-and 100gb g*y p*rn form khang-phe-da
+and W-azure
 [1]:Delta
 [2]:Fluxus
 """)
@@ -100,29 +100,15 @@ else:
 print("Unzip File....")
 unzipall("/sdcard/Download/App.zip","/sdcard/Download/")
 print("Unzip App.zip done")
-print("Wait 5s cooldown")
-time.sleep(5)
-print("Done")
 if mode == 1:    
 #----roblox delta
     if tab <=5 and not(cfe("/sdcard/Download/delta.zip")):
         print("Download delta.zip")
-        #wget.download("https://www.mediafire.com/file/0sacrbnq0izj8ug/delta.zip/file",out="trash.html")
-        delta=gawl("https://www.mediafire.com/file/0sacrbnq0izj8ug/delta.zip/file")
-        time.sleep(1)
-        delta=gawl("https://www.mediafire.com/file/0sacrbnq0izj8ug/delta.zip/file")
-        wget.download(delta,out="delta.zip")
-        os.remove("/sdcard/Download/delta.zip")
-        wget.download(delta,out="delta.zip")
+        wget.download("https://github.com/MinhMeow123/Autosetup/releases/download/database/delta.zip",out="delta.zip")
+        
     elif tab > 5 and not(cfe("/sdcard/Download/deltasvip.zip")):
         print("Download delta(large).zip")
-        #wget.download("https://www.mediafire.com/file/lfxn5c2i8bupfnh/deltasvip.zip/file",out="trash.html")
-        delta2=gawl("https://www.mediafire.com/file/lfxn5c2i8bupfnh/deltasvip.zip/file")
-        time.sleep(1)
-        delta2=gawl("https://www.mediafire.com/file/lfxn5c2i8bupfnh/deltasvip.zip/file")
-        wget.download(delta2,out="deltasvip.zip")
-        os.remove("/sdcard/Download/deltasvip.zip")
-        wget.download(delta2,out="deltasvip.zip")
+        wget.download("https://github.com/MinhMeow123/Autosetup/releases/download/database/deltasvip.zip",out="deltasvip.zip")
     print("Unzip Delta file...")
 #----unzip
     time.sleep(1)
