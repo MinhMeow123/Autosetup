@@ -42,13 +42,12 @@ while True:
 #Rootcheck
 def root():
     try:
-        # Execute the 'su' command to check for root access
         result = os.system('su -c "echo"')
         return result == 0
     except Exception as e:
         print(f"Error checking root status: {e}")
         return False
-#media fire dumbass
+#Mediafire Download 
 internal_urls = set()
 external_urls = set()
 def is_valid(url):
@@ -91,7 +90,7 @@ def testzip(file):
 print("Delete google play")
 os.system('su -c "pm uninstall -k --user 0 com.android.vending"')
 print("Ready to check file")
-link=gawl("https://www.mediafire.com/file/88smx13m9ot4nts/App.zip/file")
+link="https://github.com/MinhMeow123/Autosetup/releases/download/database/App.zip"
 if not(cfe("/sdcard/Download/App.zip")):
     print("Dowload material...")    
     wget.download(link,out="App.zip")  
@@ -108,7 +107,7 @@ if mode == 1:
         
     elif tab > 5 and not(cfe("/sdcard/Download/deltasvip.zip")):
         print("Download delta(large).zip")
-        wget.download("https://github.com/MinhMeow123/Autosetup/releases/download/database/deltasvip.zip",out="deltasvip.zip")
+        wget.download("https://github.com/MinhMeow123/Autosetup/releases/download/database/delta2.zip",out="deltasvip.zip")
     print("Unzip Delta file...")
 #----unzip
     time.sleep(1)
